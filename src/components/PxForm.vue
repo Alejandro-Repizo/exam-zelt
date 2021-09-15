@@ -17,7 +17,7 @@
           :class="error ? 'card__input card__input--danger' : 'card__input'"
           type="email"
           name="email"
-          v-model="username"
+          v-model="data.username"
         />
       </div>
       <div class="card__form--group">
@@ -30,14 +30,17 @@
           :class="error ? 'card__input card__input--danger' : 'card__input'"
           type="password"
           name="password"
-          v-model="password"
+          v-model="data.password"
         />
       </div>
-      <button class="card__button" @click="handleClick()">
+      <button type="button" class="card__button" @click="handleClick()">
         Sign In
       </button>
     </form>
+    {{ error }}
+    {{ data.username }}
   </div>
+  
 </template>
 
 <script>
@@ -57,10 +60,18 @@ export default {
 
   methods: {
     handleClick() {
-      if (this.data.username  === "" && this.data.password === "") {
-        this.error = true;
+      if (this.data.username === "" || this.data.password === "") {
+        this.error = true
+      }else {
+        this.error = false
+        this.goHome()
       }
     },
+
+    goHome() {
+      this.$router.push({ name: "home"})
+    },
+   
   },
 };
 </script>
