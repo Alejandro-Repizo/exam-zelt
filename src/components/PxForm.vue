@@ -37,8 +37,6 @@
         Sign In
       </button>
     </form>
-    {{ error }}
-    {{ data.username }}
   </div>
   
 </template>

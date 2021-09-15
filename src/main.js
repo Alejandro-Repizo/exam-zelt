@@ -1,11 +1,13 @@
-import Vue from 'vue'
-import App from './App.vue'
-// Realizamos la importacion de las rutas del vue-router
-import router from '@/router'
+import Vue from "vue";
+import App from "./App.vue";
+import router from "@/router";
+import { VueSpinners } from '@saeris/vue-spinners'
 
-Vue.config.productionTip = false
+Vue.use(VueSpinners)
+
+Vue.config.productionTip = false;
 
 new Vue({
   router: router,
-  render: h => h(App),
-}).$mount('#app')
+  render: (h) => h(App),
+}).$mount("#app");

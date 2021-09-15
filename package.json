@@ -3,11 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "start": "npm-run-all -p client serve",
+    "client": "vue-cli-service serve",
+    "serve": "json-server --port 3001 --watch server/db.json",
+    "seed": "node server/seed.js",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@saeris/vue-spinners": "^1.0.8",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
     "vue-router": "^3.5.2"
