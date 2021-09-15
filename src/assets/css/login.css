@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f3f3f6;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.container {
+    max-width: 1000px;
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template: 1fr / repeat(2, 1fr);
+    gap: 2em;
+    padding-top: 4em;
+    align-items: center;
+}
+
+.card {
+    background-color: #ffffff;
+    width: 80%;
+    max-height: 400px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 21px -8px rgba(0, 0, 0, 0.36);
+    border-radius: 6px;
+    padding: 2.4em 0;
+    position: relative;
+}
+
+.card__title {
+    font-size: 1.5em;
+    color: #3f3f3f;
+    text-transform: capitalize;
+}
+
+.card__form {
+    padding: 1em;
+    width: 90%;
+}
+
+.card__form--group {
+    display: flex;
+    flex-direction: column;
+    margin: 1.2em 0;
+    position: relative;
+    color: #878a8e;
+}
+
+.card__input {
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+    width: 100%;
+    padding: 14px 12px;
+    color: #6d6d6d;
+    outline: none;
+}
+
+.card__input:focus {
+    outline: 1.5px solid #92E3A9;
+    box-shadow: 0px 0px 21px -8px rgba(146, 227, 169, 1);
+    background-color: #ebfdf0;
+    border-radius: 3px;
+}
+
+.card__input--danger {
+    border: 2px solid #FF725E;
+}
+
+.card__label--danger {
+    color: #FF725E;
+}
+
+.card__label {
+    background-color: #ffffff;
+    font-size: .8em;
+    font-weight: bold;
+    position: absolute;
+    padding: 0 1px;
+    top: -7px;
+    left: 9px;
+}
+
+.card__form--group:focus-within {
+    color: #92E3A9;
+}
+
+.card__button {
+    width: 100%;
+    padding: 1em 0;
+    border: 1px solid #92E3A9;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .2s ease all;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #8ad6a0;
+    font-size: .9em;
+    text-transform: capitalize;
+}
+
+.card__button:active {
+    transform: translateY(4px);
+    background-color: #b1eec2;
+}
+
+.card__icon {
+    width: 80px;
+    height: 80px;
+    background-color: #92E3A9;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    position: absolute;
+    top: -38px;
+    font-size: 2em;
+    color: #ffffff;
+}
+
+.thumbnail__img {
+    max-height: 500px;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template: 1fr / 1fr;
+        justify-items: center;
+    }
+    .thumbnail__img {
+        display: none;
+    }
+}
