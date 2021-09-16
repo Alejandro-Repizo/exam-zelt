@@ -144,7 +144,7 @@ tbody tr:nth-child(even) {
     width: 100vw;
     height: 100vh;
     transition: 1s ease all;
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
 }

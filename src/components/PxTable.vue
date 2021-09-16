@@ -9,7 +9,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="badge in badges" :key="badge.id">
+      <moon-loader
+          v-show="loader"
+          :loading="loader"
+          :color="'#68d391'"
+          :size="60"
+        />       
+      <tr v-for="badge in badges" :key="badge.id" v-show="!loader">
         <td>{{ badge.firstName }}</td>
         <td>{{ badge.lastName }}</td>
         <td>{{ badge.jobTitle }}</td>
@@ -39,6 +45,10 @@ export default {
     badges: {
       type: Array,
       default: () => [],
+    },
+    loader: {
+      type: Boolean,
+      default: true,
     },
   },
   data() {

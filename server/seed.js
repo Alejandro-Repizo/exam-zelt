@@ -10,6 +10,7 @@ function createBadges(limit = 5) {
     const firstName = faker.name.firstName();
     const lastName = faker.name.lastName();
     const email = faker.internet.email();
+    const password = md5(firstName)
 
     result.push({
       id: faker.random.uuid(),
@@ -17,8 +18,7 @@ function createBadges(limit = 5) {
       lastName,
       email,
       jobTitle: faker.name.jobTitle(),
-      twitter: `${firstName}${lastName}${faker.address.zipCode()}`,
-      avatarUrl: `https://www.gravatar.com/avatar/${md5(email)}?d=identicon`,
+      password,
     });
   }
 
